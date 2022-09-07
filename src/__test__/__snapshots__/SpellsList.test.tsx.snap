@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`home testing match snapshot 1`] = `
+<div>
+  <div
+    class="spells-parent"
+    data-testid="spells-list"
+  >
+    <ul
+      class="mt-3 spells-list"
+    />
+  </div>
+</div>
+`;

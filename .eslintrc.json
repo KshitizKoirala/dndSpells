@@ -38,6 +38,7 @@
     ],
     "react/jsx-uses-react": ["off"],
     "react/react-in-jsx-scope": ["off"],
-    "react/jsx-props-no-spreading": ["warn"]
+    "react/jsx-props-no-spreading": ["warn"],
+    "testing-library/no-unnecessary-act": ["error", { "isStrict": false }]
   }
 }

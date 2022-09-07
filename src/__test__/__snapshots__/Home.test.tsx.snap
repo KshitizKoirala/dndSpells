@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`home testing match snapshot 1`] = `
+<div>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthXl headerNavbar css-19r6kue-MuiContainer-root"
+  >
+    <header
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed NavbarPanel mui-fixed css-11b3ww9-MuiPaper-root-MuiAppBar-root"
+    >
+      <h2>
+        Dungeons and Dragons Spells
+      </h2>
+    </header>
+    <div
+      class="spells-parent"
+      data-testid="spells-list"
+    >
+      <ul
+        class="mt-3 spells-list"
+      />
+    </div>
+  </div>
+</div>
+`;

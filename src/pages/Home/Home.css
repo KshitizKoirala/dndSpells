@@ -1,0 +1,49 @@
+.NavbarPanel {
+  height: 4rem;
+  padding-top: 0.5rem;
+}
+
+.spells-parent {
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.spells-list {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 8px;
+}
+
+.spells-single {
+  flex: 0 1 calc(20% - 8px);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  min-width: 200px;
+}
+
+.spells-single p {
+  font-weight: bold;
+  text-align: left;
+  padding: 1rem 0 0 2rem;
+}
+
+.spells-single .view-btn {
+  background: #fff;
+  outline: none;
+  border: none;
+  margin-right: -5px;
+}
+
+.spells-single .favourite-btn {
+  width: 50%;
+}
+
+.spells-single:hover {
+  background-color: lightgray;
+}
