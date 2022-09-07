@@ -8,11 +8,13 @@ import SpellSingle from "./SpellSingle";
 interface IMapSpell {
   index: string;
   name: string;
+  url: string;
 }
 
 function SpellsList() {
   const [allSpells, setAllSpells] = useState([]);
 
+  // Fetch the single spell during initial page load
   useEffect(() => {
     const getAllSpells = async () => {
       await axios.get(api.fetch).then((res) => {
@@ -26,7 +28,9 @@ function SpellsList() {
     <div className="spells-parent" data-testid="spells-list">
       <ul className="mt-3 spells-list">
         {allSpells.map((spell: IMapSpell) => (
-          <SpellSingle key={spell.index} spellName={spell.name} />
+          <li key={spell.index} className="spells-single">
+            <SpellSingle spellName={spell.name} spellUrl={spell.index} />
+          </li>
         ))}
       </ul>
     </div>

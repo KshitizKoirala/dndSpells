@@ -57,8 +57,8 @@ describe("home", () => {
   });
 
   it("renders the spellsSingle Component", () => {
-    render(<SpellSingle spellName="" />);
-    const linkElement = screen.getByTestId("spellsSingleComponent");
+    render(<SpellList />);
+    const linkElement = screen.getByTestId("spells-single");
     expect(linkElement).toBeInTheDocument();
   });
 });

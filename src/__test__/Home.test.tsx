@@ -4,6 +4,7 @@ import { act } from "react-dom/test-utils";
 // import renderer from "react-test-renderer";
 
 import Home from "../pages/Home/Home";
+import NavBar from "../component/Navbar/NavBar";
 
 afterEach(cleanup);
 
@@ -32,7 +33,7 @@ describe("home", () => {
   });
 
   it("renders header title in the document", () => {
-    render(<Home />);
+    render(<NavBar />);
     const linkElement = screen.getByText(/Dungeons and Dragons Spells/);
     expect(linkElement).toBeInTheDocument();
   });

@@ -1,31 +1,33 @@
-// import React, { useContext, useState } from "react";
+/* eslint-disable @typescript-eslint/indent */
+import { useState, createContext, useMemo } from "react";
+import SpellType from "../../types/spell-types";
 
-// type ThemeContextProviderProps = {
-//   children: React.ReactNode;
-// };
+type ThemeContextProviderProps = {
+  children: React.ReactNode;
+};
 
-// const SpellsContext = React.createContext([]);
+type SpellsContextType = {
+  favourite: SpellType.ISpellList | null;
+  setFavourite: React.Dispatch<
+    React.SetStateAction<SpellType.ISpellList | null>
+  >;
+};
 
-// export const useFavourites = () => useContext(SpellsContext);
+// context to be used to access the value directly
+export const SpellsContext = createContext({} as SpellsContextType);
 
-// export function UserContextProvider({ children }: ThemeContextProviderProps) {
-//   // Creating a spells state to be accessed overall
-//   const [spells, setSpells] = useState([]);
-//   const value = React.useMemo(
-//     () => ({
-//       spells,
-//       setSpells,
-//     }),
-//     [spells],
-//   );
+// Wrapper to wrap around the components as HOC
+export function SpellsContextProvider({ children }: ThemeContextProviderProps) {
+  const [favourite, setFavourite] = useState<SpellType.ISpellList | null>(null);
+  const value = useMemo(
+    () => ({
+      favourite,
+      setFavourite,
+    }),
+    [favourite],
+  );
 
-//   return (
-//     <SpellsContext.Provider value={value}>{children}</SpellsContext.Provider>
-//   );
-// }
-
-function spellsContext() {
-  return <div>spellsContext</div>;
+  return (
+    <SpellsContext.Provider value={value}>{children}</SpellsContext.Provider>
+  );
 }
-
-export default spellsContext;

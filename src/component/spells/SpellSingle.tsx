@@ -1,19 +1,39 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+
+import { SpellsContext } from "../../context/spells/spellsContext";
 
 interface SpellProps {
   spellName: string;
+  spellUrl: string;
 }
 
-function SpellSingle({ spellName }: SpellProps) {
+function SpellSingle({ spellName, spellUrl }: SpellProps) {
+  const spellsContext = useContext(SpellsContext);
   const [isFavourite, setIsFavourite] = useState(false);
 
+  // Adds to the favourite context
+  const addToFavourites = (
+    favouriteSpellName: string,
+    favouriteSpellUrl: string,
+  ) => {
+    setIsFavourite(!isFavourite);
+    spellsContext.setFavourite({
+      index: favouriteSpellUrl,
+      name: favouriteSpellName,
+      url: favouriteSpellUrl,
+    });
+  };
+
   return (
-    <li className="spells-single" data-testId="spellsSingleComponent">
-      <p>{spellName}</p>
+    <>
+      <Link to={`/spells/${spellUrl}`}>
+        <p data-testid="spells-single">{spellName}</p>
+      </Link>
       <button
         type="button"
         className="view-btn"
-        onClick={() => setIsFavourite(!isFavourite)}
+        onClick={() => addToFavourites(spellName, spellUrl)}
       >
         <img
           className="favourite-btn"
@@ -21,7 +41,7 @@ function SpellSingle({ spellName }: SpellProps) {
           alt="favourite"
         />
       </button>
-    </li>
+    </>
   );
 }
 

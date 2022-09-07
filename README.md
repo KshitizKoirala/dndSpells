@@ -12,6 +12,7 @@ An app to fetch spells from [DnD v5 API](http://www.dnd5eapi.co/) and their deta
 
 - `React`
 - `React Router` - For managing the routes
+- `useContext Hook` - For managing state throughout the app
 - `Typescript` - For statically typed code
 - `Material UI` - Designing the UI
 
