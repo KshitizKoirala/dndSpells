@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { SpellsContext } from "../../context/spells/spellsContext";
@@ -18,12 +18,27 @@ function SpellSingle({ spellName, spellUrl }: SpellProps) {
     favouriteSpellUrl: string,
   ) => {
     setIsFavourite(!isFavourite);
-    spellsContext.setFavourite({
-      index: favouriteSpellUrl,
-      name: favouriteSpellName,
-      url: favouriteSpellUrl,
-    });
+    spellsContext.setFavourite([
+      ...spellsContext.favourite,
+      {
+        index: favouriteSpellUrl,
+        name: favouriteSpellName,
+        url: favouriteSpellUrl,
+      },
+    ]);
   };
+
+  useEffect(() => {
+    function getAllFavourites(findSpellName: string) {
+      const spellsFavouritefound = spellsContext.favourite.find(
+        (obj) => obj.name === findSpellName,
+      );
+      if (spellsFavouritefound) {
+        setIsFavourite(true);
+      }
+    }
+    getAllFavourites(spellName);
+  }, [spellName, spellsContext.favourite]);
 
   return (
     <>

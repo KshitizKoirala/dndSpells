@@ -1,7 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { cleanup, render, screen } from "@testing-library/react";
 import { act } from "react-dom/test-utils";
-// import renderer from "react-test-renderer";
 
 import Home from "../pages/Home/Home";
 import NavBar from "../component/Navbar/NavBar";
@@ -10,11 +9,7 @@ afterEach(cleanup);
 
 describe("home", () => {
   function prepare() {
-    const { container } = render(
-      // <ProviderMock favorites={[]}>
-      <Home />,
-      // </ProviderMock>
-    );
+    const { container } = render(<Home />);
     return { container };
   }
 

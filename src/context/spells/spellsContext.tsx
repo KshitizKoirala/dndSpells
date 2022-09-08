@@ -2,14 +2,14 @@
 import { useState, createContext, useMemo } from "react";
 import SpellType from "../../types/spell-types";
 
-type ThemeContextProviderProps = {
+type SpellContextProviderProps = {
   children: React.ReactNode;
 };
 
 type SpellsContextType = {
-  favourite: SpellType.ISpellList | null;
+  favourite: SpellType.ISpellList[] | [];
   setFavourite: React.Dispatch<
-    React.SetStateAction<SpellType.ISpellList | null>
+    React.SetStateAction<SpellType.ISpellList[] | []>
   >;
 };
 
@@ -17,8 +17,8 @@ type SpellsContextType = {
 export const SpellsContext = createContext({} as SpellsContextType);
 
 // Wrapper to wrap around the components as HOC
-export function SpellsContextProvider({ children }: ThemeContextProviderProps) {
-  const [favourite, setFavourite] = useState<SpellType.ISpellList | null>(null);
+export function SpellsContextProvider({ children }: SpellContextProviderProps) {
+  const [favourite, setFavourite] = useState<SpellType.ISpellList[] | []>([]);
   const value = useMemo(
     () => ({
       favourite,

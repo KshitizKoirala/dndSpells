@@ -11,16 +11,16 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <SpellsContextProvider>
-        <BrowserRouter>
+      <BrowserRouter>
+        <SpellsContextProvider>
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="spells/:index" element={<SpellDetail />} />
             <Route path="*" element={<div>Sorry Page Not Found</div>} />
           </Routes>
-        </BrowserRouter>
-      </SpellsContextProvider>
+        </SpellsContextProvider>
+      </BrowserRouter>
     </div>
   );
 }

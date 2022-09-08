@@ -1,31 +1,4 @@
-declare namespace SpellType {
-  interface Single {
-    index: string;
-    name: string;
-    url: string;
-  }
-  interface List {
-    count: number;
-    results: Array<Single>;
-  }
-  interface Detail {
-    _id: string;
-    index: string;
-    name: string;
-    desc: Array<string>;
-    higher_level: Array<string>;
-    range: string;
-    components: Array<string>;
-    material: string;
-    ritual: boolean;
-    duration: string;
-    concentration: boolean;
-    casting_time: string;
-    level: number;
-    attack_type: string;
-    url: string;
-  }
-}
+import SpellType from "../types/spell-types";
 
 export const spellData: SpellType.List = {
   count: 5,
