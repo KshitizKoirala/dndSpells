@@ -28,6 +28,7 @@ function SpellSingle({ spellName, spellUrl }: SpellProps) {
     ]);
   };
 
+  // Verify if the spells is already in favouites list
   useEffect(() => {
     function getAllFavourites(findSpellName: string) {
       const spellsFavouritefound = spellsContext.favourite.find(

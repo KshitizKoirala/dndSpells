@@ -1,6 +1,6 @@
 # Dungeons and Dragons Spells
 
-An app to fetch spells from [DnD v5 API](http://www.dnd5eapi.co/) and their details.
+An app to fetch spells from [DnD v5 API](http://www.dnd5eapi.co/) and their details. You can view the live site [from here](https://dndspells.pages.dev/)
 
 ## Setting up the App
 
